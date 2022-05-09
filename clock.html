@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap');
+</style>
+
+<p style="font-family: Bitter; color: black; font-size: 30px; text-align: center;" id="time"></p>
+
+
+
+
+<script>
+
+
+function update() {
+    const d = new Date();
+var sec = d.getSeconds();
+var min = d.getMinutes();
+var hour = d.getHours();
+var minsec = "";
+
+if (hour > 12) {
+    var hours = hour - 12
+    var end = "PM"
+} else {
+    var hours = hour
+    var end = "AM"
+}
+
+if (sec < 10) {
+    var minsec = "0"
+} else {
+    var minsec = ""
+}
+
+if (min < 10) {
+    var minmin = "0"
+    
+} else {
+    var minmin = ""
+}
+
+var time = hours + ":" + minmin + min + ":" + minsec + sec + " " + end;
+document.getElementById('time').innerHTML = time;
+}
+setInterval(update, 1000);
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
